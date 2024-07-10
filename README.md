@@ -4,4 +4,3 @@
 # step three: import/export the database
 # step four: register product
 # step five: Repeat step four until all products are registered
-
