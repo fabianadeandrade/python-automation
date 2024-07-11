@@ -29,40 +29,51 @@ time.sleep(3)
 # step three: import/export the database
 import pandas
 
-table = pandas.read_csv("produtos.csv")
-print(table)
+tablecreated = pandas.read_csv("produtos.csv")
+print(tablecreated)
 
 # step four: register product
-# codigo
-pyautogui.click(x=-1008, y=270)
-pyautogui.write("codigo")
+for line in tablecreated.index:
+    # codigo
+    pyautogui.click(x=-1008, y=270)
+    codigo = str(tablecreated.loc[line, "codigo"])
+    pyautogui.write(codigo)
 
-# marca
-pyautogui.press("tab")
-pyautogui.write("marca")
+    # marca
+    pyautogui.press("tab")
+    marca = str(tablecreated.loc[line, "marca"])
+    pyautogui.write(marca)
 
-# tipo
-pyautogui.press("tab")
-pyautogui.write("tipo")
+    # tipo
+    pyautogui.press("tab")
+    tipo = str(tablecreated.loc[line, "tipo"])
+    pyautogui.write(tipo)
 
-# categoria
-pyautogui.press("tab")
-pyautogui.write("categoria")
+    # categoria
+    pyautogui.press("tab")
+    categoria = str(tablecreated.loc[line, "categoria"])
+    pyautogui.write(categoria)
 
-# preco_unitario
-pyautogui.press("tab")
-pyautogui.write("preco_unitario")
+    # preco_unitario
+    pyautogui.press("tab")
+    preco_unitario = str(tablecreated.loc[line, "preco_unitario"])
+    pyautogui.write(preco_unitario)
 
-# custo
-pyautogui.press("tab")
-pyautogui.write("custo")
+    # custo
+    pyautogui.press("tab")
+    custo = str(tablecreated.loc[line, "custo"])
+    pyautogui.write(custo)
 
-# obs
-pyautogui.press("tab")
-pyautogui.write("obs")
+    # obs
+    pyautogui.press("tab")
+    obs = str(tablecreated.loc[line, "obs"])
+    if obs != "nan":
+        pyautogui.write(obs)
 
-pyautogui.press("tab")
-pyautogui.press("enter")
+    pyautogui.press("tab")
+    pyautogui.press("enter")
 
-pyautogui.scroll(5000)
+    pyautogui.scroll(5000)
 
+# step five: Repeat step four until all products are registered
+# included command for on stpe four for this step
