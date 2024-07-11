@@ -1,11 +1,15 @@
 # step one - login at the company's login
 #  Link: https://dlp.hashtagtreinamentos.com/python/intensivao/login
-# step two: login
-# step three: import/export the database
-# step four: register product
-# step five: Repeat step four until all products are registered
-
 # pip install pyautogui
+
+# step two: login
+
+# step three: import/export the database
+# pip install pandas openpyxl numpy (if you do not have these on your computer)
+
+# step four: register product
+
+# step five: Repeat step four until all products are registered
 
 # explanation of the commands/code into python
 # pyautogui.click - click with the mouse
